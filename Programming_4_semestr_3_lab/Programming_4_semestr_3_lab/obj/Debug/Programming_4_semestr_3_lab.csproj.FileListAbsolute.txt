@@ -1,0 +1,6 @@
+c:\users\александр\documents\visual studio 2015\Projects\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.exe.config
+c:\users\александр\documents\visual studio 2015\Projects\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.exe
+c:\users\александр\documents\visual studio 2015\Projects\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.pdb
+c:\users\александр\documents\visual studio 2015\Projects\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.exe
+c:\users\александр\documents\visual studio 2015\Projects\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.pdb
+C:\Users\Александр\Documents\Visual Studio 2015\Projects\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.csprojResolveAssemblyReference.cache
