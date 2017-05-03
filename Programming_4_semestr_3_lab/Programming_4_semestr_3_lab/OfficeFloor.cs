@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming_4_semestr_3_lab
 {
-    class OfficeFloor
+    class OfficeFloor : IFloor
     {
         #region Task
         //Создайте класс OfficeFloor этажа офисного здания.

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming_4_semestr_3_lab
 {
-    class Office
+    class Office : ISpace
     {
         #region Task
         //Создайте класс Office офиса офисного здания.

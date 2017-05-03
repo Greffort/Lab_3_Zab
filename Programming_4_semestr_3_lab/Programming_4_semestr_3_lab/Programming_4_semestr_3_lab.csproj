@@ -45,7 +45,11 @@
   <ItemGroup>
     <Compile Include="CircularLinkedList.cs" />
     <Compile Include="DoublyLinkedList.cs" />
+    <Compile Include="IBuilding.cs" />
+    <Compile Include="IFloor.cs" />
+    <Compile Include="ISpace.cs" />
     <Compile Include="LinkedListNode.cs" />
+    <Compile Include="MyException.cs" />
     <Compile Include="Office.cs" />
     <Compile Include="OfficeBuilding.cs" />
     <Compile Include="OfficeFloor.cs" />

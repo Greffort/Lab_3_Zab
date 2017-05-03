@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Programming_4_semestr_3_lab
 {
-    class OfficeBuilding
+    class OfficeBuilding : IBuilding
     {
         #region Task
         //Создайте класс OfficeBuilding офисного здания.
@@ -152,20 +152,40 @@ namespace Programming_4_semestr_3_lab
 
         }//удаления офиса по его номеру в здании. null
 
-        public Office getBestSpace(CircularLinkedList<Office> List)
+        public void RemoveOffice()
         {
-            int maxArea = 0;
+
+        }//удаления офиса из здания. null требует интерфейс
+
+        //public Office getBestSpace(CircularLinkedList<Office> List)
+        //{
+        //    int maxArea = 0;
+        //    Office of = null;
+        //    foreach (var item in List)
+        //    {
+        //        if (item.area > maxArea)
+        //        {
+        //            maxArea = item.area;
+        //            of = item;
+        //        }
+        //    }
+        //    return of;
+        //}//получения самого большого по площади офиса здания. null
+
+        public Office getBestSpace()
+        {
+            //int maxArea = 0;
             Office of = null;
-            foreach (var item in List)
-            {
-                if (item.area > maxArea)
-                {
-                    maxArea = item.area;
-                    of = item;
-                }
-            }
+            //foreach (var item in DLL)
+            //{
+            //    if (item.area > maxArea)
+            //    {
+            //        maxArea = item.area;
+            //        of = item;
+            //    }
+            //}
             return of;
-        }//получения самого большого по площади офиса здания. null
+        }//получения самого большого по площади офиса здания. null требует интерфейс
 
         //Создайте метод получения отсортированного по убыванию площадей массива офисов. null
 
