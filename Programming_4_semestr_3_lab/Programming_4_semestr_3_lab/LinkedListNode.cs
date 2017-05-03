@@ -6,20 +6,26 @@ using System.Threading.Tasks;
 
 namespace Programming_4_semestr_3_lab
 {
-    class LinkedListNode<Office>
+    class LinkedListNode<T>
     {  
-        public LinkedListNode(Office value)
+        public LinkedListNode(T value)
         {
             Value = value;
         }
 
-        public Office Value
+        public T Value
         {
             get;
             internal set;
         }
           
-        public LinkedListNode<Office> Next
+        public LinkedListNode<T> Next
+        {
+            get;
+            internal set;
+        }
+
+        public LinkedListNode<T> Previous
         {
             get;
             internal set;

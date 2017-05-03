@@ -7,10 +7,10 @@ using System.Collections;
 
 namespace Programming_4_semestr_3_lab
 {
-    class CircularLinkedList<Office> : IEnumerable<Office>
+    class CircularLinkedList<T> : IEnumerable<T>
     {
-        public LinkedListNode<Office> _head;
-        public LinkedListNode<Office> _tail;
+        public LinkedListNode<T> _head;
+        public LinkedListNode<T> _tail;
 
         public int Count
         {
@@ -18,10 +18,10 @@ namespace Programming_4_semestr_3_lab
             private set;
         }
         
-        public void Add(Office value)
+        public void Add(T value)
         {
 
-            LinkedListNode<Office> node = new LinkedListNode<Office>(value);
+            LinkedListNode<T> node = new LinkedListNode<T>(value);
 
             if (_head == null)
             {
@@ -37,9 +37,9 @@ namespace Programming_4_semestr_3_lab
             Count++;
         }
 
-        public void AddFirst(Office value)
+        public void AddFirst(T value)
         {
-            LinkedListNode<Office> node = new LinkedListNode<Office>(value);
+            LinkedListNode<T> node = new LinkedListNode<T>(value);
             node.Next = _head;
             _head = node;
             if (Count == 0)
@@ -47,10 +47,10 @@ namespace Programming_4_semestr_3_lab
             Count++;
         }
         
-        public bool Remove(Office item)
+        public bool Remove(T item)
         {
-            LinkedListNode<Office> previous = null;
-            LinkedListNode<Office> current = _head;
+            LinkedListNode<T> previous = null;
+            LinkedListNode<T> current = _head;
 
             while (current != null)
             {
@@ -85,9 +85,9 @@ namespace Programming_4_semestr_3_lab
             return false;
         }
         
-        public bool Contains(Office item)
+        public bool Contains(T item)
         {
-            LinkedListNode<Office> current = _head;
+            LinkedListNode<T> current = _head;
 
             while (current != null)
             {
@@ -101,10 +101,10 @@ namespace Programming_4_semestr_3_lab
             return false;
         }
         
-        public IEnumerator<Office> GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
 
         {
-            LinkedListNode<Office> current = _head;
+            LinkedListNode<T> current = _head;
 
             while (current != null)
             {
@@ -115,7 +115,7 @@ namespace Programming_4_semestr_3_lab
         
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IEnumerable<Office>)this).GetEnumerator();
+            return ((IEnumerable<T>)this).GetEnumerator();
 
         }
         
@@ -126,9 +126,9 @@ namespace Programming_4_semestr_3_lab
             Count = 0;
         }
         
-        public void CopyTo(Office[] array, int arrayIndex)
+        public void CopyTo(T[] array, int arrayIndex)
         {
-            LinkedListNode<Office> current = _head;
+            LinkedListNode<T> current = _head;
 
             while (current != null)
             {
