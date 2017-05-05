@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 namespace Programming_4_semestr_3_lab
 {
     class LinkedListNode<T>
-    {  
+    {
+        public LinkedListNode()
+        {
+
+        }
         public LinkedListNode(T value)
         {
             Value = value;

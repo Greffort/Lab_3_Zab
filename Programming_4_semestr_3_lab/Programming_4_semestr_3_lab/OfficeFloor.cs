@@ -63,12 +63,10 @@ namespace Programming_4_semestr_3_lab
 
         }//получения узла по его номеру. null
 
-        private void AddNode(int numberNode)
+        public void AddNode(int numberNode)
         {
 
 
-
-            
             //проверка работы методов. 
             int k = 0;
             if (CLL.Count == 0)
@@ -83,7 +81,7 @@ namespace Programming_4_semestr_3_lab
                 }
                 else if (CLL.Count == numberNode)
                 {
-                    CLL.Add(new Office(1488,1488));
+                    CLL.Add(new Office(1488, 1488));
                     break;
                 }
                 else if (numberNode > CLL.Count)

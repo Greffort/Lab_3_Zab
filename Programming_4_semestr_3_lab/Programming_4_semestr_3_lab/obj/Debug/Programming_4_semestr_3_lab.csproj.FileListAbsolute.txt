@@ -7,3 +7,6 @@ C:\Users\Александр\Documents\Visual Studio 2015\Projects\Programming_4_
 D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.exe.config
 D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.exe
 D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.pdb
+D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.exe
+D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.pdb
+D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.csprojResolveAssemblyReference.cache

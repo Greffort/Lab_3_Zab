@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Runtime.InteropServices;
 
 namespace Programming_4_semestr_3_lab
 {
@@ -20,7 +21,6 @@ namespace Programming_4_semestr_3_lab
         
         public void Add(T value)
         {
-
             LinkedListNode<T> node = new LinkedListNode<T>(value);
 
             if (_head == null)
@@ -100,9 +100,34 @@ namespace Programming_4_semestr_3_lab
             }
             return false;
         }
-        
-        public IEnumerator<T> GetEnumerator()
 
+        public T GetAt(int numberNode)
+        {
+            int i = 0;
+            
+            while (i<numberNode)
+            {
+                i++;
+                _head = _head.Next;
+            }
+
+            return _head.Value;
+        }
+
+        public void SetAt (int numberNode, T a)
+        {
+            int i = 0;
+
+            while (i < numberNode)
+            {
+                i++;
+                _head = _head.Next;
+            }
+
+            _head.Value=a;
+        }
+
+        public IEnumerator<T> GetEnumerator()
         {
             LinkedListNode<T> current = _head;
 
@@ -116,7 +141,6 @@ namespace Programming_4_semestr_3_lab
         IEnumerator IEnumerable.GetEnumerator()
         {
             return ((IEnumerable<T>)this).GetEnumerator();
-
         }
         
         public void Clear()
@@ -134,6 +158,20 @@ namespace Programming_4_semestr_3_lab
             {
                 array[arrayIndex++] = current.Value;
                 current = current.Next;
+            }
+        }
+
+        public T this[int i]
+        {
+            get
+            {
+                // This indexer is very simple, and just returns or sets
+                // the corresponding element from the internal array.
+                return this.GetAt(i);
+            }
+            set
+            {
+               SetAt(i, value);
             }
         }
     }
