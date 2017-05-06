@@ -61,8 +61,8 @@ namespace Programming_4_semestr_3_lab
 
         private void GetNode(int numberNode)
         {
-
-        }//получения узла по его номеру. null
+            DLL.GetAt(numberNode);
+        }//получения узла по его номеру.
 
         private void AddNode(int numberNode)
         {
@@ -120,9 +120,9 @@ namespace Programming_4_semestr_3_lab
             return array;
         }//получения массива этажей офисного здания.
 
-        public int GetFloor(int numberOfficeInBuilding)
+        public OfficeFloor GetFloor(int numberOfficeInBuilding)
         {
-            return DLL.Count;
+            return DLL.GetAt(numberOfficeInBuilding);
         }//получения объекта этажа, по его номеру в здании. null
 
         public int GetOffice(int numberOfficeInBuilding)

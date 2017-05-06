@@ -45,7 +45,7 @@ namespace Programming_4_semestr_3_lab
 
          OfficeFloor[] GetArrayFloor();//получения массива этажей офисного здания.---
 
-         int GetFloor(int numberOfficeInBuilding);//получения объекта этажа, по его номеру в здании.---
+         OfficeFloor GetFloor(int numberOfficeInBuilding);//получения объекта этажа, по его номеру в здании.---
 
          int GetOffice(int numberOfficeInBuilding);//получения объекта офиса по его номеру в офисном здании. ---
 

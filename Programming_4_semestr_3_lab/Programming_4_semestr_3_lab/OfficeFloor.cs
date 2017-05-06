@@ -58,38 +58,38 @@ namespace Programming_4_semestr_3_lab
         }//принемает массив офисов этажа. 
         
         
-        private void GetNode(int numberNode)
+        public Office GetNode(int numberNode)
         {
+            return CLL.GetAt(numberNode);
+        }//получения узла по его номеру.
 
-        }//получения узла по его номеру. null
-
-        public void AddNode(int numberNode)
+        public void AddNode(Office numberNode)
         {
+            CLL.Add(numberNode);
 
-
-            //проверка работы методов. 
-            int k = 0;
-            if (CLL.Count == 0)
-            {
-                CLL.Add(new Office());
-            }
-            foreach (var item in CLL)
-            {
-                if (CLL.Count == 0)
-                {
-                    CLL.Add(new Office());
-                }
-                else if (CLL.Count == numberNode)
-                {
-                    CLL.Add(new Office(1488, 1488));
-                    break;
-                }
-                else if (numberNode > CLL.Count)
-                {
-                    CLL.Add(new Office());
-                }
-                k++;
-            }
+            ////проверка работы методов. 
+            //int k = 0;
+            //if (CLL.Count == 0)
+            //{
+            //    CLL.Add(new Office());
+            //}
+            //foreach (var item in CLL)
+            //{
+            //    if (CLL.Count == 0)
+            //    {
+            //        CLL.Add(new Office());
+            //    }
+            //    else if (CLL.Count == numberNode)
+            //    {
+            //        CLL.Add(new Office(1488, 1488));
+            //        break;
+            //    }
+            //    else if (numberNode > CLL.Count)
+            //    {
+            //        CLL.Add(new Office());
+            //    }
+            //    k++;
+            //}
         }//добавления узла в список по номеру. null
 
         private void RemoveNode(int numberNode)
@@ -130,31 +130,14 @@ namespace Programming_4_semestr_3_lab
             return array;
         }//получения массива офисов этажа. 
         
-        public int GetOffice(int numberOffice)
+        public Office GetOffice(int numberOffice)
         {
-            //for (int i = 0; i < List.Count; i++)
-            //{
-            //    if (i == numberOffice)
-            //    {
-            //        return List[i];
-            //    }
-            //}
-            //foreach (var item in List)
-            //{
-            //    if (List.Contains(item))
-            //    {
-            //        return item;
-            //    }
-            //}
+            return CLL.GetAt(numberOffice);
+        }//получения офиса по его номеру на этаже.
 
-
-
-            return CLL.Count;
-        }//получения офиса по его номеру на этаже. null
-
-        public void ChangeOffice(int numberOffice)
+        public void ChangeOffice(int numberOffice, Office obj)
         {
-
+            CLL.SetAt(numberOffice, obj);
         }//изменения офиса по его номеру на этаже и ссылке на обновленный офис. null
 
         public void AddOffice(int futureNumberOffice )
@@ -167,11 +150,11 @@ namespace Programming_4_semestr_3_lab
 
         }//удаления офиса по его номеру на этаже. null
 
-        public Office getBestSpace(CircularLinkedList<Office> List)
+        public Office GetBestSpace()
         {
             int maxArea = 0;
             Office of = null;
-            foreach (var item in List)
+            foreach (var item in CLL)
             {
                 if (item.area > maxArea)
                 {

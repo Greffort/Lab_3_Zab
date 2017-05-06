@@ -35,9 +35,9 @@ namespace Programming_4_semestr_3_lab
 
         Office[] GetArrayFloor();//получения массива офисов этажа. 
 
-        int GetOffice(int numberOffice);//получения офиса по его номеру на этаже.
+        Office GetOffice(int numberOffice);//получения офиса по его номеру на этаже.
 
-        void ChangeOffice(int numberOffice);//изменения офиса по его номеру на этаже и ссылке на обновленный офис.
+        void ChangeOffice(int numberOffice, Office obj);//изменения офиса по его номеру на этаже и ссылке на обновленный офис.
 
         void AddOffice(int numberNode/*,  ссылка на новое помещение*/ );//вставки помещения по его номеру и ссылке на новое помещение,
 

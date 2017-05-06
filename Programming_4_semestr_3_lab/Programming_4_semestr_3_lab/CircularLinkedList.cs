@@ -18,7 +18,19 @@ namespace Programming_4_semestr_3_lab
             get;
             private set;
         }
-        
+
+        public T this[int i]
+        {
+            get
+            {
+                return this.GetAt(i);
+            }
+            set
+            {
+                SetAt(i, value);
+            }
+        }
+
         public void Add(T value)
         {
             LinkedListNode<T> node = new LinkedListNode<T>(value);
@@ -104,27 +116,39 @@ namespace Programming_4_semestr_3_lab
         public T GetAt(int numberNode)
         {
             int i = 0;
-            
-            while (i<numberNode)
+            LinkedListNode<T> temp = _head;
+           
+            while (i < numberNode)
             {
+                temp = temp.Next;
                 i++;
-                _head = _head.Next;
             }
 
-            return _head.Value;
+            return temp.Value;
         }
 
+        //посмотри этот метод
         public void SetAt (int numberNode, T a)
         {
             int i = 0;
+            LinkedListNode<T> temp ;
 
-            while (i < numberNode)
-            {
-                i++;
-                _head = _head.Next;
-            }
+            //хочу вызвать метод который дает нам результат, и к нему присвоить temp, не знаю как сделать
+            //еще и не думал особо над этим
+            temp = GetAt(numberNode);
+            
 
-            _head.Value=a;
+            //while (i < numberNode)
+            //{
+
+            //    temp = temp.Next;
+            //    i++;
+            //}
+
+            //temp.Value = a;
+
+
+
         }
 
         public IEnumerator<T> GetEnumerator()
@@ -158,20 +182,6 @@ namespace Programming_4_semestr_3_lab
             {
                 array[arrayIndex++] = current.Value;
                 current = current.Next;
-            }
-        }
-
-        public T this[int i]
-        {
-            get
-            {
-                // This indexer is very simple, and just returns or sets
-                // the corresponding element from the internal array.
-                return this.GetAt(i);
-            }
-            set
-            {
-               SetAt(i, value);
             }
         }
     }
