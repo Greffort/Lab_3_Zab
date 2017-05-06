@@ -58,7 +58,7 @@ namespace Programming_4_semestr_3_lab
         }//принемает массив офисов этажа. 
         
         
-        public Office GetNode(int numberNode)
+        private Office GetNode(int numberNode)
         {
             return CLL.GetAt(numberNode);
         }//получения узла по его номеру.
@@ -94,7 +94,7 @@ namespace Programming_4_semestr_3_lab
 
         private void RemoveNode(int numberNode)
         {
-
+            //CLL.SetAt(numberNode,null);//так не работает
         }//удаления узла из списка по его номеру. null
         
 
@@ -132,13 +132,14 @@ namespace Programming_4_semestr_3_lab
         
         public Office GetOffice(int numberOffice)
         {
-            return CLL.GetAt(numberOffice);
+            //return  CLL.GetAt(numberOffice);
+            return GetNode(numberOffice);
         }//получения офиса по его номеру на этаже.
 
         public void ChangeOffice(int numberOffice, Office obj)
         {
             CLL.SetAt(numberOffice, obj);
-        }//изменения офиса по его номеру на этаже и ссылке на обновленный офис. null
+        }//изменения офиса по его номеру на этаже и ссылке на обновленный офис.
 
         public void AddOffice(int futureNumberOffice )
         {

@@ -15,13 +15,12 @@ namespace Programming_4_semestr_3_lab
             Office O3 = new Office(300, 3);
             Office O4 = new Office(400, 4);
             Office O5 = new Office(100500, 100500);
-
-
-
-
+            
             OfficeFloor OF = new OfficeFloor();
             CircularLinkedList<Office> CLL = new CircularLinkedList<Office>();
-          
+            DoublyLinkedList<OfficeFloor> DLL = new DoublyLinkedList<OfficeFloor>();
+            //DLL.GetAt(2);
+
             //OF.Display();
             //OF.Add(O2);
             //OF.Add(O3);
@@ -39,12 +38,15 @@ namespace Programming_4_semestr_3_lab
 
             OF.Display();
 
-            Console.WriteLine(OF.GetNode(3));
+            Console.WriteLine(OF.GetOffice(3));
             
-            OF.ChangeOffice(0, O5);
+            OF.ChangeOffice(3, O5);
 
             OF.Display();
 
+            OF.RemoveOffice(2);
+
+            OF.Display();
 
 
 

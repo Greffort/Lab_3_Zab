@@ -22,13 +22,6 @@ namespace Programming_4_semestr_3_lab
             private set;
         }
         
-        // Методы двухсвязного списка
-
-        #region AddAfter
-
-
-
-        #endregion
 
         #region Метод AddFirst добавляет новый элемент в начало списка
 

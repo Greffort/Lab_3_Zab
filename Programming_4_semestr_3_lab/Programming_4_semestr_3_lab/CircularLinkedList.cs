@@ -120,6 +120,7 @@ namespace Programming_4_semestr_3_lab
            
             while (i < numberNode)
             {
+                
                 temp = temp.Next;
                 i++;
             }
@@ -127,28 +128,19 @@ namespace Programming_4_semestr_3_lab
             return temp.Value;
         }
 
-        //посмотри этот метод
         public void SetAt (int numberNode, T a)
         {
             int i = 0;
-            LinkedListNode<T> temp ;
+            LinkedListNode<T> temp = _head;
 
-            //хочу вызвать метод который дает нам результат, и к нему присвоить temp, не знаю как сделать
-            //еще и не думал особо над этим
-            temp = GetAt(numberNode);
-            
+            while (i < numberNode)
+            {
 
-            //while (i < numberNode)
-            //{
+                temp = temp.Next;
+                i++;
+            }
 
-            //    temp = temp.Next;
-            //    i++;
-            //}
-
-            //temp.Value = a;
-
-
-
+            temp.Value = a;
         }
 
         public IEnumerator<T> GetEnumerator()
