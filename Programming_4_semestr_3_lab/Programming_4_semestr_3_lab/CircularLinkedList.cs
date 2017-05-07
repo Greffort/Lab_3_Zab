@@ -31,6 +31,7 @@ namespace Programming_4_semestr_3_lab
             }
         }
 
+
         public void Add(T value)
         {
             LinkedListNode<T> node = new LinkedListNode<T>(value);
@@ -48,6 +49,37 @@ namespace Programming_4_semestr_3_lab
             }
             Count++;
         }
+
+
+        public void Add(int numberNode,T value)
+        {
+            int i = 0;
+            LinkedListNode<T> temp = _head;
+            LinkedListNode<T> node = new LinkedListNode<T>(value);
+            while (i < numberNode)
+            {
+                temp = temp.Next;
+                i++;
+            }
+
+            //temp.Value = a;
+            
+            if (_head == null)
+            {
+                _head = node;
+                _tail = node;
+            }
+
+            else
+            {
+                temp.Next = node;
+                temp = node;
+            }
+
+
+            Count++;
+        }
+       
 
         public void AddFirst(T value)
         {

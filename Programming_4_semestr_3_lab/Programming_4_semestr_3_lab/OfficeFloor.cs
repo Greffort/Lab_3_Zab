@@ -33,7 +33,6 @@ namespace Programming_4_semestr_3_lab
         #endregion
 
         CircularLinkedList<Office> CLL = new CircularLinkedList<Office>();
-
         
         public OfficeFloor()
         {
@@ -63,33 +62,9 @@ namespace Programming_4_semestr_3_lab
             return CLL.GetAt(numberNode);
         }//получения узла по его номеру.
 
-        public void AddNode(Office numberNode)
+        public void AddNode(int numberNode1,Office numberNode)
         {
-            CLL.Add(numberNode);
-
-            ////проверка работы методов. 
-            //int k = 0;
-            //if (CLL.Count == 0)
-            //{
-            //    CLL.Add(new Office());
-            //}
-            //foreach (var item in CLL)
-            //{
-            //    if (CLL.Count == 0)
-            //    {
-            //        CLL.Add(new Office());
-            //    }
-            //    else if (CLL.Count == numberNode)
-            //    {
-            //        CLL.Add(new Office(1488, 1488));
-            //        break;
-            //    }
-            //    else if (numberNode > CLL.Count)
-            //    {
-            //        CLL.Add(new Office());
-            //    }
-            //    k++;
-            //}
+            CLL.Add(numberNode1, numberNode);
         }//добавления узла в список по номеру. null
 
         private void RemoveNode(int numberNode)
@@ -143,7 +118,7 @@ namespace Programming_4_semestr_3_lab
 
         public void AddOffice(int futureNumberOffice )
         {
-
+            //AddNode(new Office());
         }//добавления нового офиса на этаже по будущему номеру офиса. null
         
         public void RemoveOffice(int numberOffice)

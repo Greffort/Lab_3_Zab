@@ -12,6 +12,7 @@ namespace Programming_4_semestr_3_lab
         {
 
         }
+
         public LinkedListNode(T value)
         {
             Value = value;

@@ -21,7 +21,7 @@ namespace Programming_4_semestr_3_lab
             get;
             private set;
         }
-        
+
 
         #region Метод AddFirst добавляет новый элемент в начало списка
 
@@ -197,7 +197,5 @@ namespace Programming_4_semestr_3_lab
         }
 
         #endregion
-
-
     }
 }
