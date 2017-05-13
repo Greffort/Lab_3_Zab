@@ -36,13 +36,55 @@ namespace Programming_4_semestr_3_lab
         //Создайте метод getBestSpace() получения самого большого по площади офиса здания.
         //Создайте метод получения отсортированного по убыванию площадей массива офисов.
         #endregion
-        DoublyLinkedList<OfficeFloor> DLL = new DoublyLinkedList<OfficeFloor>();
 
-        int[] countOfficeOnFloors;
+        #region индексация
+        public OfficeFloor this[int i]
+        {
+            get
+            {
+                return this.GetAt(i);
+            }
+            set
+            {
+                SetAt(i, value);
+            }
+        }
 
-        OfficeBuilding[] array;
+        public void SetAt(int numberNode, OfficeFloor a)
+        {
 
+            LinkedListNode<OfficeFloor> temp = Agregator(numberNode);
+            temp.Value = a;
+        }
 
+        public OfficeFloor GetAt(int numberNode)
+        {
+            //string s = "нет такого элемента";
+            if (numberNode > DLL.Count - 1)
+            {
+                return null;
+            }
+            LinkedListNode<OfficeFloor> temp = Agregator(numberNode);
+
+            return temp.Value;
+        }
+
+        private LinkedListNode<OfficeFloor> Agregator(int numberNode)
+        {
+            int i = 0;
+            LinkedListNode<OfficeFloor> temp = DLL._head;
+
+            while (i < numberNode)
+            {
+                temp = temp.Next;
+                i++;
+            }
+            return temp;
+        }
+
+        #endregion
+
+        #region Конструкторы
         public OfficeBuilding()
         {
 
@@ -57,18 +99,26 @@ namespace Programming_4_semestr_3_lab
         {
             this.array = array;
         }//массив этажей офисного здания
+        #endregion
 
+        Programming_4_semestr_3_lab.OfficeFloor OF = new OfficeFloor();
 
-        private void GetNode(int numberNode)
+        DoublyLinkedList<OfficeFloor> DLL = new DoublyLinkedList<OfficeFloor>();
+
+        int[] countOfficeOnFloors;
+
+        OfficeBuilding[] array;
+        
+
+        private OfficeFloor GetNode(int numberNode)
         {
-            DLL.GetAt(numberNode);
+            return GetAt(numberNode);
         }//получения узла по его номеру.
 
-        private void AddNode(int numberNode)
+        private void AddNode(int numberNode, OfficeFloor obj)
         {
-
-
-        }//добавления узла в список по номеру. null
+            DLL.AddInsert(numberNode, obj);
+        }//добавления узла в список по номеру.
 
         private void RemoveNode(int numberNode)
         {
@@ -83,13 +133,13 @@ namespace Programming_4_semestr_3_lab
 
         public int GetNumberOffice()
         {
-            int TotalArea = 0;
-            //foreach (var item in DLL)
-            //{
-            //    TotalArea += item.;
-            //}
-            return TotalArea;
-        }//получения общего количества офисов здания. null
+            int count = 0;
+            foreach (var VARIABLE in DLL)
+            {
+                count += VARIABLE.GetNumberOffice();
+            }
+            return count;
+        }//получения общего количества офисов здания.
 
         public int GetTotalAreaFloor()
         {
@@ -122,30 +172,29 @@ namespace Programming_4_semestr_3_lab
 
         public OfficeFloor GetFloor(int numberOfficeInBuilding)
         {
-            return DLL.GetAt(numberOfficeInBuilding);
-        }//получения объекта этажа, по его номеру в здании. null
+            return GetNode(numberOfficeInBuilding);
+        }//получения объекта этажа, по его номеру в здании.
 
-        public int GetOffice(int numberOfficeInBuilding)
+        public Office GetOffice(int numberOfficeInBuilding)
         {
-            
-            return DLL.Count;
-        }//получения объекта офиса по его номеру в офисном здании. null
+            return OF.GetOffice(numberOfficeInBuilding);
+        }//получения объекта офиса по его номеру в офисном здании.
 
 
-        public void ChangeFloor(int numberFloorInBuilding/*, ссылка на обновленный этаж*/)
+        public void ChangeFloor(int numberFloorInBuilding, OfficeFloor officefloor)
         {
+            SetAt(numberFloorInBuilding, officefloor);
+        }//изменения этажа по его номеру в здании и ссылке на обновленный этаж.
 
-        }//изменения этажа по его номеру в здании и ссылке на обновленный этаж. null
-
-        public void ChangeOffice(int numberFloorInBuilding/*, ссылка на тип оффиса*/)
+        public void ChangeOffice(int numberFloorInBuilding,Office office)
         {
+            OF.ChangeOffice(numberFloorInBuilding, office);
+        }//изменения объекта офиса по его номеру в доме и ссылке типа офиса.
 
-        }//изменения объекта офиса по его номеру в доме и ссылке типа офиса. null
-
-        public void AddOffice(int numberOfficeInBuilding/*, ссылка на оффис*/)
+        public void AddOfficeFloor(int numberOfficeInBuilding, OfficeFloor obj)
         {
-
-        }//добавления офиса в здание по номеру офиса в здании и ссылке на офис. null
+            AddNode(numberOfficeInBuilding,obj);
+        }//добавления офиса в здание по номеру офиса в здании и ссылке на офис.
 
         public void RemoveOffice(int numberOfficeInBuilding)
         {
@@ -188,10 +237,6 @@ namespace Programming_4_semestr_3_lab
         }//получения самого большого по площади офиса здания. null требует интерфейс
 
         //Создайте метод получения отсортированного по убыванию площадей массива офисов. null
-
-
-
-
 
         public void Display()
         {

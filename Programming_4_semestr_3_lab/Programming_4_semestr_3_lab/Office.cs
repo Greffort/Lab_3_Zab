@@ -70,9 +70,7 @@ namespace Programming_4_semestr_3_lab
         public override string ToString()
         {
             string s = "Площадь: " + area +" Количество комнат: "+room + "\n";
-
             
-
             return s;
         }
 

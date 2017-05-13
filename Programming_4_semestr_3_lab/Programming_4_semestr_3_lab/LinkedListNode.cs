@@ -35,5 +35,10 @@ namespace Programming_4_semestr_3_lab
             get;
             internal set;
         }
+
+        public static explicit operator Array(LinkedListNode<T> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

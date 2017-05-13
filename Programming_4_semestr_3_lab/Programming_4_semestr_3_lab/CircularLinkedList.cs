@@ -31,7 +31,6 @@ namespace Programming_4_semestr_3_lab
             }
         }
 
-
         public void Add(T value)
         {
             LinkedListNode<T> node = new LinkedListNode<T>(value);
@@ -49,38 +48,6 @@ namespace Programming_4_semestr_3_lab
             }
             Count++;
         }
-
-
-        public void Add(int numberNode,T value)
-        {
-            int i = 0;
-            LinkedListNode<T> temp = _head;
-            LinkedListNode<T> node = new LinkedListNode<T>(value);
-            while (i < numberNode)
-            {
-                temp = temp.Next;
-                i++;
-            }
-
-            //temp.Value = a;
-            
-            if (_head == null)
-            {
-                _head = node;
-                _tail = node;
-            }
-
-            else
-            {
-                temp.Next = node;
-                temp = node;
-            }
-
-
-            Count++;
-        }
-       
-
         public void AddFirst(T value)
         {
             LinkedListNode<T> node = new LinkedListNode<T>(value);
@@ -147,31 +114,42 @@ namespace Programming_4_semestr_3_lab
 
         public T GetAt(int numberNode)
         {
-            int i = 0;
-            LinkedListNode<T> temp = _head;
-           
-            while (i < numberNode)
-            {
-                
-                temp = temp.Next;
-                i++;
-            }
+            LinkedListNode<T> temp = Agregator(numberNode);
 
             return temp.Value;
         }
 
-        public void SetAt (int numberNode, T a)
+        private LinkedListNode<T> Agregator(int numberNode)
         {
             int i = 0;
             LinkedListNode<T> temp = _head;
 
             while (i < numberNode)
             {
-
                 temp = temp.Next;
                 i++;
             }
+            return temp;
+        }
 
+        //public void SetAt (int numberNode, T a)
+        //{
+        //    int i = 0;
+        //    LinkedListNode<T> temp = _head;
+
+        //    while (i < numberNode)
+        //    {
+
+        //        temp = temp.Next;
+        //        i++;
+        //    }
+
+        //    temp.Value = a;
+        //}
+
+        public void SetAt(int numberNode, T a)
+        {
+            LinkedListNode<T> temp = Agregator(numberNode);
             temp.Value = a;
         }
 
@@ -206,6 +184,180 @@ namespace Programming_4_semestr_3_lab
             {
                 array[arrayIndex++] = current.Value;
                 current = current.Next;
+            }
+        }
+
+        public void AddInsert(int index, T item)
+        {
+            LinkedListNode<T> newElement = new LinkedListNode<T>(item);
+            
+            //LinkedListNode<T> newOffice = new LinkedListNode<T>(of);
+            LinkedListNode<T> temp = _head;
+
+            //если список пустой полюбому зайдет сюда
+            if ( index==this.Count)
+            {
+                int i = 0;
+                
+                while (i != Count-1)
+                {
+                    if (_head == null)
+                    {
+                        _head = newElement;
+                        _tail = newElement;
+                        temp = _head;
+                        break;
+                    }
+                    if (temp == null)
+                    {
+                        temp = _head;
+                    }
+                    else
+                    {
+                       temp = temp.Next;     
+                    }
+                    
+                    i++;
+                }
+
+                temp.Next = newElement;
+
+                this.Count++;
+            }
+            else
+            {
+                if (index > this.Count-1)
+                {
+                    if (index == this.Count)
+                    {
+                        newElement.Next = _tail;
+                        _tail = newElement;
+                        if (Count == 0)
+                            _head = _tail;
+                        Count++;
+                    }
+                    else
+                    {
+                        //здесь сделать добавление переменных
+                        int i = 0;
+                        //while (i != index)
+                        //{
+                        while (i != Count - 1)
+                        {
+                            //if (i>=Count-1)
+                            //{
+                            //    break;
+                            //}
+                            if (temp == null)
+                            {
+                                temp = _head;
+                            }
+                            else
+                            {
+                                temp = temp.Next;
+                            }
+                            //temp.Next = newElement;
+                            i++;
+                            
+                        }
+                        //temp.Next = newOffice; /*new Office();*/
+                        //this.Count++;
+                        //i++;
+                        //}
+                        //temp.Next = newElement;
+                        temp.Next = newElement;
+                        this.Count++;
+                    }
+                }
+                //никита
+                if (index < this.Count && index > 0)
+                {
+                    int i = 0;
+                    while (i < index - 1)
+                    {
+                        temp = temp.Next;
+                        i++;
+                    }
+                    newElement.Next = temp.Next;
+                    temp.Next = newElement;
+                    this.Count++;
+                }
+                else
+                {
+                    if (index == 0)
+                    {
+                        newElement.Next = temp;
+                        this._head = newElement;
+                        Count++;
+                    }
+                    //исключение - индекс отрицательный или больше размера. 
+                }
+                //никита
+            }
+        }
+
+        public void RemoveInsert(int index, T item)
+        {
+            LinkedListNode<T> newElement = new LinkedListNode<T>(item);
+            
+            if (index == this.Count)
+            {
+                int i = 0;
+                LinkedListNode<T> temp = _head;
+
+                while (i != Count - 1)
+                {
+                    if (_head == null)
+                    {
+                        _head = newElement;
+                        _tail = newElement;
+                        temp = _head;
+                        break;
+                    }
+                    if (temp == null)
+                    {
+                        temp = _head;
+                    }
+                    else
+                    {
+                        temp = temp.Next;
+                    }
+
+                    i++;
+                }
+
+                temp.Next = newElement;
+
+                this.Count++;
+            }
+            else
+            {
+                if (index < this.Count && index > 0)
+                {
+                    int i = 0;
+                    LinkedListNode<T> temp = _head;
+
+                    while (i < index - 1)
+                    {
+                        temp = temp.Next;
+                        i++;
+                    }
+                    newElement.Next = temp.Next;
+                    temp.Next = newElement;
+                    this.Count++;
+                }
+                else
+                {
+                    if (index == 0)
+                    {
+                        LinkedListNode<T> temp = _head;
+
+                        newElement.Next = temp;
+                        this._head = newElement;
+                        Count++;
+                    }
+                    //исключение - индекс отрицательный или больше размера. 
+                }
             }
         }
     }

@@ -8,6 +8,18 @@ namespace Programming_4_semestr_3_lab
 {
     class DoublyLinkedList<T> : CircularLinkedList<T>
     {
+        new public T this[int i]
+        {
+            get
+            {
+                return this.GetAt(i);
+            }
+            set
+            {
+                SetAt(i, value);
+            }
+        }
+
         public bool IsReadOnly
         {
             get
@@ -21,12 +33,6 @@ namespace Programming_4_semestr_3_lab
             get;
             private set;
         }
-
-
-        #region Метод AddFirst добавляет новый элемент в начало списка
-
-        // В то время как в односвязный список добавлять элементы можно только в конец, двухсвязный список позволяет добавлять
-        // их и в начало. Для этого существует метод AddFirst.  
 
         new public void AddFirst(T value)
         {
@@ -58,9 +64,6 @@ namespace Programming_4_semestr_3_lab
             }
             Count++;
         }
-        #endregion
-
-        #region Метод AddLast добавляет новый элемент в конец списка
 
         public void AddLast(T value)
         {
@@ -83,15 +86,11 @@ namespace Programming_4_semestr_3_lab
             _tail = node;
             Count++;
         }
-
-        #endregion
-
-        #region Метод Remove удаляет из списка указанный элемент.
-
-        //Метод возвращает true, если элемент найден и удален.  
-
+        
         new public bool Remove(T item)
         {
+            //Метод возвращает true, если элемент найден и удален.  
+
             LinkedListNode<T> previous = null;
             LinkedListNode<T> current = _head;
 
@@ -141,10 +140,7 @@ namespace Programming_4_semestr_3_lab
             return false;
 
         }
-        #endregion
-
-        #region Метод RemoveFirst удаляет первый элемент из списка
-
+        
         public void RemoveFirst()
         {
             if (Count != 0)
@@ -165,12 +161,7 @@ namespace Programming_4_semestr_3_lab
                 }
             }
         }
-
-
-        #endregion
-
-        #region Метод RemoveLast удалеят последний элемента из списка
-
+        
         public void RemoveLast()
         {
             if (Count != 0)
@@ -196,6 +187,115 @@ namespace Programming_4_semestr_3_lab
             }
         }
 
-        #endregion
+        public void AddInsert(int index, T item)
+        {
+            LinkedListNode<T> newElement = new LinkedListNode<T>(item);
+
+            //LinkedListNode<T> newOffice = new LinkedListNode<T>(of);
+            LinkedListNode<T> temp = _head;
+
+            //если список пустой полюбому зайдет сюда
+            if (index == this.Count)
+            {
+                int i = 0;
+
+                while (i != Count - 1)
+                {
+                    if (_head == null)
+                    {
+                        _head = newElement;
+                        _tail = _head;
+                        temp = _head;
+                        temp.Previous = _head;
+                        break;
+                    }
+                    if (temp == null)
+                    {
+                        temp = _head;
+                    }
+                    else
+                    {
+                        temp = temp.Next;
+                    }
+
+                    i++;
+                }
+
+                temp.Next = newElement;
+
+                this.Count++;
+            }
+            else
+            {
+                if (index > this.Count - 1)
+                {
+                    if (index == this.Count)
+                    {
+                        newElement.Next = _tail;
+                        _tail = newElement;
+                        if (Count == 0)
+                            _head = _tail;
+                        Count++;
+                    }
+                    else
+                    {
+                        //здесь сделать добавление переменных
+                        int i = 0;
+                        //while (i != index)
+                        //{
+                        while (i != Count - 1)
+                        {
+                            //if (i>=Count-1)
+                            //{
+                            //    break;
+                            //}
+                            if (temp == null)
+                            {
+                                temp = _head;
+                            }
+                            else
+                            {
+                                temp = temp.Next;
+                            }
+                            //temp.Next = newElement;
+                            i++;
+
+                        }
+                        //temp.Next = newOffice; /*new Office();*/
+                        //this.Count++;
+                        //i++;
+                        //}
+                        //temp.Next = newElement;
+                        temp.Next = newElement;
+                        this.Count++;
+                    }
+                }
+                //никита
+                if (index < this.Count && index > 0)
+                {
+                    int i = 0;
+                    while (i < index - 1)
+                    {
+                        temp = temp.Next;
+                        i++;
+                    }
+                    newElement.Next = temp.Next;
+                    temp.Next = newElement;
+                    this.Count++;
+                }
+                else
+                {
+                    if (index == 0)
+                    {
+                        newElement.Next = temp;
+                        this._head = newElement;
+                        Count++;
+                    }
+                    //исключение - индекс отрицательный или больше размера. 
+                }
+                //никита
+            }
+        }
+
     }
 }

@@ -33,7 +33,7 @@ namespace Programming_4_semestr_3_lab
     #endregion
 
 
-    interface IBuilding
+    interface IBuilding /*: IFloor*/
     {
          int GetNumberFloor();//получения общего количества этажей здания.---
 
@@ -47,14 +47,14 @@ namespace Programming_4_semestr_3_lab
 
          OfficeFloor GetFloor(int numberOfficeInBuilding);//получения объекта этажа, по его номеру в здании.---
 
-         int GetOffice(int numberOfficeInBuilding);//получения объекта офиса по его номеру в офисном здании. ---
+         Office GetOffice(int numberOfficeInBuilding);//получения объекта офиса по его номеру в офисном здании. ---
 
 
-         void ChangeFloor(int numberFloorInBuilding/*, ссылка на обновленный этаж*/);//изменения этажа по его номеру в здании и ссылке на обновленный этаж.---
+        void ChangeFloor(int numberFloorInBuilding, OfficeFloor officefloor);//изменения этажа по его номеру в здании и ссылке на обновленный этаж.---
 
-         void ChangeOffice(int numberFloorInBuilding/*, ссылка на тип оффиса*/);//изменения объекта офиса по его номеру в доме и ссылке типа офиса.---
+         void ChangeOffice(int numberFloorInBuilding, Office office);//изменения объекта офиса по его номеру в доме и ссылке типа офиса.---
 
-         void AddOffice(int numberOfficeInBuilding/*, ссылка на оффис*/);//добавления офиса в здание по номеру офиса в здании и ссылке на офис. ---
+         void AddOfficeFloor(int numberOfficeInBuilding, OfficeFloor obj);//добавления офиса в здание по номеру офиса в здании и ссылке на офис. ---
 
          void RemoveOffice(/*int numberOfficeInBuilding*/);//удаления помещения из здания, . ---
 

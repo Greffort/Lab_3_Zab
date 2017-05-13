@@ -31,9 +31,54 @@ namespace Programming_4_semestr_3_lab
         //Создайте метод удаления офиса по его номеру на этаже.
         //Создайте метод getBestSpace() получения самого большого по площади офиса этажа
         #endregion
-
-        CircularLinkedList<Office> CLL = new CircularLinkedList<Office>();
         
+        #region  Индексация
+        public Office this[int i]
+        {
+            get
+            {
+                return this.GetAt(i);
+            }
+            set
+            {
+                SetAt(i, value);
+            }
+        }
+
+        public void SetAt(int numberNode, Office a)
+        {
+
+            LinkedListNode<Office> temp = Agregator(numberNode);
+            temp.Value = a;
+        }
+
+        public Office GetAt(int numberNode)
+        {
+            if (numberNode > CLL.Count - 1)
+            {
+                return null;
+            }
+            LinkedListNode<Office> temp = Agregator(numberNode);
+
+            return temp.Value;
+        }
+
+        private LinkedListNode<Office> Agregator(int numberNode)
+        {
+            int i = 0;
+            LinkedListNode<Office> temp = CLL._head;
+
+            while (i < numberNode)
+            {
+                temp = temp.Next;
+                i++;
+            }
+            return temp;
+        }
+
+        #endregion//getat возвращает null если нет такого элемента 
+        
+        #region Конструкторы
         public OfficeFloor()
         {
 
@@ -55,18 +100,21 @@ namespace Programming_4_semestr_3_lab
                 CLL.Add(numberOffice[i]);
             }
         }//принемает массив офисов этажа. 
-        
-        
+        #endregion
+
+        CircularLinkedList<Office> CLL = new CircularLinkedList<Office>();
+
         private Office GetNode(int numberNode)
         {
-            return CLL.GetAt(numberNode);
-        }//получения узла по его номеру.
+            return CLL[numberNode];
+        }//получения узла по его номеру. //или метод getat
 
-        public void AddNode(Office numberNode)
+        private void AddNode(int newNumberOffice,Office newOffice)
         {
-            CLL.Add(numberNode);
-        }//добавления узла в список по номеру. null
-
+            Office of = new Office();
+            CLL.AddInsert(newNumberOffice, newOffice);
+        }//добавления узла в список по номеру.
+        
         private void RemoveNode(int numberNode)
         {
             //CLL.SetAt(numberNode,null);//так не работает
@@ -107,7 +155,6 @@ namespace Programming_4_semestr_3_lab
         
         public Office GetOffice(int numberOffice)
         {
-            //return  CLL.GetAt(numberOffice);
             return GetNode(numberOffice);
         }//получения офиса по его номеру на этаже.
 
@@ -115,12 +162,16 @@ namespace Programming_4_semestr_3_lab
         {
             CLL.SetAt(numberOffice, obj);
         }//изменения офиса по его номеру на этаже и ссылке на обновленный офис.
-
-        public void AddOffice(int futureNumberOffice )
+            
+        public void AddOffice(int futureNumberOffice)
         {
-            AddNode(new Office());
-        }//добавления нового офиса на этаже по будущему номеру офиса. null
-        
+            AddNode(futureNumberOffice, new Office());
+        }//добавления нового офиса на этаже по будущему номеру офиса.
+        public void AddOffice(int futureNumberOffice, Office office)
+        {
+            AddNode(futureNumberOffice, office);
+        }//добавления нового офиса на этаже по будущему номеру офиса.
+
         public void RemoveOffice(int numberOffice)
         {
 
@@ -143,13 +194,20 @@ namespace Programming_4_semestr_3_lab
 
         public void Display()
         {
-            foreach (Office word in CLL)
+            Console.WriteLine();
+            foreach (var word in CLL)
             {
                 Console.Write(word + " ");
             }
             Console.WriteLine();
             Console.WriteLine();
         }
-        
+
+        public override string ToString()
+        {
+            string s = " Количество оффисов: " + CLL.Count + "\n";
+
+            return s;
+        }
     }
 }

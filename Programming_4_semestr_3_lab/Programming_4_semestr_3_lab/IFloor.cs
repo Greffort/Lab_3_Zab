@@ -25,7 +25,7 @@ namespace Programming_4_semestr_3_lab
     //Space(с возможностью, например, добавить на жилой этаж офисное помещение).
     //Рекомендуется использовать возможности рефакторинга среды разработки.
     #endregion
-    interface IFloor
+    interface IFloor /*: ISpace*/
     {
         int GetNumberOffice();//получения количества помещений на этаже.
 

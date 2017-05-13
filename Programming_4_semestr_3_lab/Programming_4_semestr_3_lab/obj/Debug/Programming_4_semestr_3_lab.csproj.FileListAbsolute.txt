@@ -10,3 +10,15 @@ D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_se
 D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.exe
 D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.pdb
 D:\Репозитории\Lab_3_Zab\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.csprojResolveAssemblyReference.cache
+C:\Users\sv\Desktop\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.exe.config
+C:\Users\sv\Desktop\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.exe
+C:\Users\sv\Desktop\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.pdb
+C:\Users\sv\Desktop\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.exe
+C:\Users\sv\Desktop\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.pdb
+C:\Users\sv\Desktop\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.csprojResolveAssemblyReference.cache
+C:\Users\Александр\OneDrive\Документы\Программирование\4 семестр\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.exe.config
+C:\Users\Александр\OneDrive\Документы\Программирование\4 семестр\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.exe
+C:\Users\Александр\OneDrive\Документы\Программирование\4 семестр\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.pdb
+C:\Users\Александр\OneDrive\Документы\Программирование\4 семестр\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\obj\Debug\Programming_4_semestr_3_lab.csprojResolveAssemblyReference.cache
+C:\Users\Александр\OneDrive\Документы\Программирование\4 семестр\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.exe
+C:\Users\Александр\OneDrive\Документы\Программирование\4 семестр\Lab_3_Zab-master\Lab_3_Zab-master\Programming_4_semestr_3_lab\Programming_4_semestr_3_lab\bin\Debug\Programming_4_semestr_3_lab.pdb
