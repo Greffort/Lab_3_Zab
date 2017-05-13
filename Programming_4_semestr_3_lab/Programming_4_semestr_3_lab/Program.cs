@@ -31,10 +31,10 @@ namespace Programming_4_semestr_3_lab
             //CLL.Add(O3);
             //CLL.Add(O4);
 
-            OF.AddNode(1,O1);
-            OF.AddNode(2,O2);
-            OF.AddNode(0,O3);
-            OF.AddNode(4,O4);
+            OF.AddNode(O1);
+            OF.AddNode(O2);
+            OF.AddNode(O3);
+            OF.AddNode(O4);
 
             OF.Display();
 
